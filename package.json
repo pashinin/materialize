@@ -29,8 +29,10 @@
   "dependencies": {},
   "engine": "node >= 6",
   "devDependencies": {
+    "animejs": "^2.2.0",
     "autoprefixer": "^7.1.1",
     "babel-preset-es2015": "^6.24.1",
+    "cash-dom": "^2.3.3",
     "grunt": "^1.0.1",
     "grunt-babel": "^6.0.0",
     "grunt-banner": "^0.6.0",
@@ -56,6 +58,7 @@
     "lint-staged": "^7.0.4",
     "node-archiver": "^0.3.0",
     "node-sass": "^4.7.2",
+    "node-waves": "^0.7.6",
     "phantomjs-prebuilt": "^2.1.14",
     "prettier": "^1.12.1"
   },

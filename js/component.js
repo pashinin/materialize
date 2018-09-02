@@ -1,4 +1,6 @@
-class Component {
+import cash from 'cash-dom/dist/cash.esm.js';
+
+export default class Component {
   /**
    * Generic constructor for all components
    * @constructor

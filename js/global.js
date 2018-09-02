@@ -1,3 +1,5 @@
+// import { cash } from 'cash-dom/dist/cash.esm.js';
+
 // Required for Meteor package, the use of window prevents export by Meteor
 (function(window) {
   if (window.Package) {
@@ -423,3 +425,5 @@ M.throttle = function(func, wait, options) {
     return result;
   };
 };
+
+export default M;

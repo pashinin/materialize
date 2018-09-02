@@ -370,7 +370,7 @@
             // If image still has no height, use the natural dimensions to calculate
             let naturalWidth = firstImage[0].naturalWidth;
             let naturalHeight = firstImage[0].naturalHeight;
-            let adjustedHeight = this.$el.width() / naturalWidth * naturalHeight;
+            let adjustedHeight = (this.$el.width() / naturalWidth) * naturalHeight;
             this.$el.css('height', adjustedHeight + 'px');
           }
         } else {
@@ -418,7 +418,11 @@
      * @param {Number} x
      */
     _wrap(x) {
-      return x >= this.count ? x % this.count : x < 0 ? this._wrap(this.count + x % this.count) : x;
+      return x >= this.count
+        ? x % this.count
+        : x < 0
+          ? this._wrap(this.count + (x % this.count))
+          : x;
     }
 
     /**
@@ -433,7 +437,7 @@
       delta = this.offset - this.frame;
       this.frame = this.offset;
 
-      v = 1000 * delta / (1 + elapsed);
+      v = (1000 * delta) / (1 + elapsed);
       this.velocity = 0.8 * v + 0.2 * this.velocity;
     }
 
@@ -489,7 +493,7 @@
       this.center = Math.floor((this.offset + this.dim / 2) / this.dim);
       delta = this.offset - this.center * this.dim;
       dir = delta < 0 ? 1 : -1;
-      tween = -dir * delta * 2 / this.dim;
+      tween = (-dir * delta * 2) / this.dim;
       half = this.count >> 1;
 
       if (this.options.fullWidth) {
@@ -608,7 +612,7 @@
      * @param {Function} callback
      */
     _cycleTo(n, callback) {
-      let diff = this.center % this.count - n;
+      let diff = (this.center % this.count) - n;
 
       // Account for wraparound.
       if (!this.noWrap) {
